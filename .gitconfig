@@ -1,0 +1,29 @@
+[core]
+  pager = less -FRSX
+
+[user]
+  name = Tavish Armstrong
+  email = tavisharmstrong@gmail.com
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  log = auto
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[alias]
+  l = log --pretty=\"format:%h (%an): %s\" --graph --decorate
