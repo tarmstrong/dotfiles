@@ -161,4 +161,13 @@ endif
 map <SPACE> w
 
 " use w!! to write file with sudo
-cmap w!! w !sudo tee % >/dev/null
+map w!! w !sudo tee % >/dev/null
+
+" folding and stuff
+let php_sql_query = 1
+let php_htmlInStrings = 1
+let php_parent_error_close = 1
+let php_parent_error_open = 1
+let php_folding = 1
+
+set smartindent
