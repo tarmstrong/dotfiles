@@ -46,3 +46,15 @@ then
 fi
 
 echo 'You will have to copy the .gitconfig yourself.'
+
+if [ ! -d ~/bin/$f ];
+then
+  mkdir ~/bin
+fi
+
+echo "Copying the bin scripts."
+for f in $( ls $PWD/bin );
+do
+  rm ~/bin/$f
+  ln -s $PWD/bin/$f ~/bin/$f
+done
