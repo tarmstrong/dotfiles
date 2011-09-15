@@ -152,5 +152,7 @@ cscope -b -q
 
 export EDITOR='vim'
 
+alias r='rolldice'
+
 alias 'badassh'='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no '
 alias 'badascp'='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no '

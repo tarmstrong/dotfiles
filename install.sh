@@ -55,6 +55,9 @@ fi
 echo "Copying the bin scripts."
 for f in $( ls $PWD/bin );
 do
-  rm ~/bin/$f
+  if [ -f ~/bin/$f ];
+  then
+    rm ~/bin/$f
+  fi
   ln -s $PWD/bin/$f ~/bin/$f
 done
