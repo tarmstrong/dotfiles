@@ -129,6 +129,7 @@ endif
 
 map <F1> :python debugger_resize()<cr>
 map <F2> :python debugger_command('step_into')<cr>
+map ,n :python debugger_command('step_into')<cr>,c
 map <F3> :python debugger_command('step_over')<cr>
 map <F4> :python debugger_command('step_out')<cr>
 
@@ -147,9 +148,15 @@ map <F8> :python debugger_command('step_over')<cr>
 map <F9> :python debugger_command('step_out')<cr>
 
 map <F11> :python debugger_context()<cr>
+map ,c :python debugger_context()<cr>
+
 map <F12> :python debugger_property()<cr>
+map ,p :python debugger_property()<cr>
+
 map <F11> :python debugger_watch_input("context_get")<cr>A<cr>
+map ,c :python debugger_watch_input("context_get")<cr>A<cr>
 map <F12> :python debugger_watch_input("property_get", '<cword>')<cr>A<cr>
+map ,p :python debugger_watch_input("property_get", '<cword>')<cr>A<cr>
 
 hi DbgCurrent term=reverse ctermfg=White ctermbg=Red gui=reverse
 hi DbgBreakPt term=reverse ctermfg=White ctermbg=Green gui=reverse
@@ -157,6 +164,10 @@ hi DbgBreakPt term=reverse ctermfg=White ctermbg=Green gui=reverse
 command! -nargs=? Bp python debugger_mark('<args>')
 command! -nargs=0 Up python debugger_up()
 command! -nargs=0 Dn python debugger_down()
+
+noremap <up> <ESC>:Up<cr>
+noremap <down> <ESC>:Dn<cr>
+
 sign define current text=->  texthl=DbgCurrent linehl=DbgCurrent
 sign define breakpt text=B>  texthl=DbgBreakPt linehl=DbgBreakPt
 
