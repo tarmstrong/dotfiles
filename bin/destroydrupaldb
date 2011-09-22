@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+drush sql-dump | grep '^DROP TABLE' | drush sqlc
