@@ -158,6 +158,9 @@ map ,c :python debugger_watch_input("context_get")<cr>A<cr>
 map <F12> :python debugger_watch_input("property_get", '<cword>')<cr>A<cr>
 map ,p :python debugger_watch_input("property_get", '<cword>')<cr>A<cr>
 
++command! -nargs=? Wa python debugger_auto_watch_input('<args>')
+
+
 hi DbgCurrent term=reverse ctermfg=White ctermbg=Red gui=reverse
 hi DbgBreakPt term=reverse ctermfg=White ctermbg=Green gui=reverse
 
