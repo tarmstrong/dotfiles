@@ -156,3 +156,9 @@ alias r='rolldice'
 
 alias 'badassh'='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no '
 alias 'badascp'='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no '
+
+if [ -f $HOME/.bash_host_extra ];
+then
+  source $HOME/.bash_host_extra
+fi
+
