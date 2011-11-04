@@ -138,10 +138,13 @@ alias byobu="byobu -m"
 
 export PAGER='less'
 
-if [ -d ~/bin ]; then
-  PATH=~/bin:"${PATH}"
+addpaths="~/bin ~/bin/bin ~/.cabal/bin ~/local/npm/bin"
+
+for path in $addpaths;
+do
+  PATH=$path":${PATH}"
   export PATH
-fi
+done
 
 # FOR REVERSE CTAGS
 function scopethis() {

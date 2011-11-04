@@ -106,6 +106,8 @@ map <Leader>s2 :set ts=2 sts=2 sw=2 expandtab autoindent smartindent<CR>
 let python_highlight_all = 1
 au FileType python syn keyword pythonDecorator True None False self
 
+au BufNewFile,BufRead *.py set ts=4 sts=4 sw=4 expandtab autoindent smartindent
+
 au BufNewFile,BufRead *.jinja set syntax=htmljinja
 au BufNewFile,BufRead *.mako set ft=mako
 
@@ -169,6 +171,7 @@ let php_htmlInStrings = 1
 let php_parent_error_close = 1
 let php_parent_error_open = 1
 let php_folding = 1
+au BufNewFile,BufRead *.php set ts=2 sts=2 sw=2 expandtab autoindent smartindent
 
 set ai
 set smartindent
