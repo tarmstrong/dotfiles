@@ -124,7 +124,7 @@ function tagthis() {
   then
     dir='site'
   fi
-  ctags --langmap=php:.module.inc.engine -R $dir/{includes,modules,themes/engines,sites}/*
+  ctags --langmap=php:.module.inc.engine -R $dir/*
 }
 # /From EW wiki:-------------------
 
@@ -159,9 +159,17 @@ alias r='rolldice'
 
 alias 'badassh'='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no '
 alias 'badascp'='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no '
+alias 'nokeyssh'='ssh -o PubkeyAuthentication=no'
+
+# Make Drupal 8 patch. Pipe this into an appropriately named file.
+alias make8patch='git format-patch origin/8.x --stdout'
 
 if [ -f $HOME/.bash_host_extra ];
 then
   source $HOME/.bash_host_extra
+fi
+if [ -f $HOME/.bash_profile ];
+then
+  source $HOME/.bash_profile
 fi
 
