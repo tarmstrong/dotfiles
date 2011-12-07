@@ -126,6 +126,14 @@ function tagthis() {
   fi
   ctags --langmap=php:.module.inc.engine -R $dir/*
 }
+function tagthisold() {
+  local dir=$1
+  if [ ! -d $dir ];
+  then
+    dir='site'
+  fi
+  ctags --langmap=php:.module.inc.engine -R $dir/{includes,modules,themes/engines,sites}/*
+}
 # /From EW wiki:-------------------
 
 alias gs="git status"
