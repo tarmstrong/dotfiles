@@ -168,8 +168,3 @@ if [ -f $HOME/.bash_host_extra ];
 then
   source $HOME/.bash_host_extra
 fi
-if [ -f $HOME/.bash_profile ];
-then
-  source $HOME/.bash_profile
-fi
-
