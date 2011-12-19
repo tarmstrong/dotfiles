@@ -4,12 +4,16 @@ echo "--------------------------"
 echo "   Installing dotfiles!"
 echo "--------------------------"
 
-files='.vimrc .bashrc'
+files='.vimrc .bashrc .inputrc'
 
 for file in $files;
 do
   echo "Linking $PWD/$file to /home/tavish/$file"
-  rm /home/tavish/$file
+  test -f /home/tavish/$file
+  if [ -f /home/tavish/$file ];
+  then
+    rm /home/tavish/$file
+  fi
   ln -s $PWD/$file /home/tavish/
   echo
 done
