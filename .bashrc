@@ -176,3 +176,7 @@ if [ -f $HOME/.bash_host_extra ];
 then
   source $HOME/.bash_host_extra
 fi
+if [ -d $HOME/.cabal/bin ];
+then
+  export PATH=$PATH:$HOME/.cabal/bin
+fi
