@@ -108,6 +108,12 @@ au FileType python syn keyword pythonDecorator True None False self
 
 au BufNewFile,BufRead *.py set ts=4 sts=4 sw=4 expandtab autoindent smartindent
 
+au BufNewFile,BufRead *.js set ts=2 sts=2 sw=2 expandtab autoindent smartindent
+
+" Ugh
+au BufNewFile,BufRead *.cpp set ts=4 sts=4 sw=4 autoindent smartindent noet
+au BufNewFile,BufRead *.h set ts=4 sts=4 sw=4 autoindent smartindent noet
+
 au BufNewFile,BufRead *.jinja set syntax=htmljinja
 au BufNewFile,BufRead *.mako set ft=mako
 
@@ -118,6 +124,9 @@ au BufNewFile,BufRead *.install set ft=php
 au BufNewFile,BufRead *.txt map j gj
 au BufNewFile,BufRead *.txt map k gk
 au BufNewFile,BufRead *.txt set nocursorline
+
+au BufNewFile,BufRead *.md set nocursorline
+au BufNewFile,BufRead *.md set ft=txt
 
 """"""""""""""""""""""""""""""
 " => PHP section
@@ -162,6 +171,8 @@ endif
 
 map <SPACE> w
 
+map é /
+
 " use w!! to write file with sudo
 map w!! w !sudo tee % >/dev/null
 
@@ -175,4 +186,6 @@ au BufNewFile,BufRead *.php set ts=2 sts=2 sw=2 expandtab autoindent smartindent
 
 set ai
 set smartindent
+
+execute pathogen#infect()
 

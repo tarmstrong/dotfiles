@@ -176,7 +176,20 @@ if [ -f $HOME/.bash_host_extra ];
 then
   source $HOME/.bash_host_extra
 fi
+export BETTERPANDOC=$HOME/code/pandoc/cabal-dev/bin/pandoc
 if [ -d $HOME/.cabal/bin ];
 then
   export PATH=$PATH:$HOME/.cabal/bin
 fi
+
+function vsp() {
+  sitename=$1
+  echo "/var/shared/sites/$sitename/site"
+}
+
+alias gitproblems="git ls-files -z | xargs -0 grep -HEIn --color ' (FIXME|BUG|TODO|XXX) *([^#]|$)'"
+
+export SONAR_RUNNER_HOME=/home/tavish/code/sonar-runner
+
+export PATH=$PATH:/home/tavish/code/sonar-runner/bin
+
