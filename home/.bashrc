@@ -191,5 +191,12 @@ alias gitproblems="git ls-files -z | xargs -0 grep -HEIn --color ' (FIXME|BUG|TO
 
 export SONAR_RUNNER_HOME=/home/tavish/code/sonar-runner
 
-export PATH=$PATH:/home/tavish/code/sonar-runner/bin
+if [ test -d /home/tavish/code/sonar-runner/bin ];
+then
+  export PATH=$PATH:/home/tavish/code/sonar-runner/bin
+fi
 
+if [ test -d $HOME/code/depot_tools ];
+then
+  export PATH=$PATH:$HOME/code/depot_tools
+fi
