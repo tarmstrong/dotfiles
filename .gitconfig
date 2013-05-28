@@ -1,9 +1,11 @@
 [core]
   pager = less -FRSX
+	autocrlf = input
 
 [user]
   name = Tavish Armstrong
   email = tavisharmstrong@gmail.com
+  signingkey = "635A8E46"
 
 [color]
   diff = auto
@@ -27,3 +29,7 @@
 
 [alias]
   l = log --pretty=\"format:%h (%an): %s\" --graph --decorate
+  out = outgoing
+
+[push]
+  default = current
