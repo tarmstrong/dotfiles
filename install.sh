@@ -25,12 +25,23 @@ install_dotfile() {
   do_if_real ln -s $dotfile $target_location
 }
 
+install_alias() {
+  dotfile=$1
+  target_alias=$2
+  curdir=$( pwd )
+  do_if_real ln -s "$curdir/home/$dotfile" "$target_home/$target_alias"
+}
+
+install_aliases() {
+  install_alias ".bashrc" ".profile"
+}
 
 main() {
   for dotfile in $( find home -type f );
   do
     install_dotfile $dotfile 
   done
+  install_aliases
 }
 
 main
