@@ -36,12 +36,22 @@ install_aliases() {
   install_alias ".bashrc" ".profile"
 }
 
+install_bin() {
+  curdir=$( pwd )
+  do_if_real mkdir -p $target_home/bin
+  for f in $( find bin -type f );
+  do
+    do_if_real ln -s "$curdir"/$f $target_home/bin/$f
+  done
+}
+
 main() {
   for dotfile in $( find home -type f );
   do
     install_dotfile $dotfile 
   done
   install_aliases
+  install_bin
 }
 
 main
