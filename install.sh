@@ -41,7 +41,7 @@ install_bin() {
   do_if_real mkdir -p $target_home/bin
   for f in $( find bin -type f );
   do
-    do_if_real ln -s "$curdir"/$f $target_home/bin/$f
+    do_if_real ln -s "$curdir"/$f $target_home/$f
   done
 }
 
