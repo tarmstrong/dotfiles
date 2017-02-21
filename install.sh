@@ -19,10 +19,11 @@ do_if_real() {
 
 install_dotfile() {
   dotfile=$1
-  target_location="$target_home/$dotfile"
+  dotfile_relative=$( echo $dotfile | sed "s|^home.||" )
+  target_location="$target_home/$dotfile_relative"
   target_path=$( dirname $target_location );
   do_if_real mkdir -p $target_path
-  do_if_real ln -s $dotfile $target_location
+  do_if_real ln -s `pwd`$dotfile $target_location
 }
 
 install_alias() {
