@@ -73,6 +73,7 @@ alias gl="git log"
 alias gll="git log --pretty=oneline"
 alias gd="git diff"
 alias gc="git commit"
+alias amend="git commit -a --amend"
 
 export PAGER='less'
 
