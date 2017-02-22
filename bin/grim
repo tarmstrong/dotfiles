@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+mpull && git checkout - && git rebase --interactive master
