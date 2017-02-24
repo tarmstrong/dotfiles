@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+
+commit=$( git rev-parse HEAD )
+
+vim $@ $( lscommit $commit )

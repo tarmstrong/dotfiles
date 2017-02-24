@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+commit=$1
+
+git diff-tree --no-commit-id --name-only -r $commit
