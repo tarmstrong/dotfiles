@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# List the files touched by the given commit
+
 commit=$1
 
 git diff-tree --no-commit-id --name-only -r $commit

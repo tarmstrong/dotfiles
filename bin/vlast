@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+# Open the last commit's files in vim
+# Example usage:
+# (open in multiple buffers)
+#   $ vlast
+# (open in multiple tabs)
+#   $ vlast -p
+
 
 commit=$( git rev-parse HEAD )
 
