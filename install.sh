@@ -23,7 +23,7 @@ install_dotfile() {
   target_location="$target_home/$dotfile_relative"
   target_path=$( dirname $target_location );
   do_if_real mkdir -p $target_path
-  do_if_real ln -s `pwd`$dotfile $target_location
+  do_if_real ln -s `pwd`/$dotfile $target_location
 }
 
 install_alias() {
